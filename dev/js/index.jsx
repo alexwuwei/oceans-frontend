@@ -1,7 +1,7 @@
 'use strict';
 require(__dirname + '/../sass/home/base-home.scss');
-// require(__dirname + '/../sass/home/module-home.scss');
-// require(__dirname + '/../sass/home/layout-home.scss');
+require(__dirname + '/../sass/home/module-home.scss');
+require(__dirname + '/../sass/home/layout-home.scss');
 // require(__dirname + '/../sass/home/state-home.scss');
 
 import {Router, Route, hashHistory} from 'react-router';
