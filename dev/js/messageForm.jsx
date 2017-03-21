@@ -18,10 +18,11 @@ class MessageForm extends React.Component {
         const name = target.name;
 
         this.setState({[name]: value});
+        console.log(this.state);
     }
 
     handleSubmit(event) {
-    console.log('An essay was submitted: ' + this.state.value);
+    console.log('An essay was submitted: ');
     event.preventDefault();
   }
 
@@ -47,7 +48,7 @@ class MessageForm extends React.Component {
                 Location:
                 <input name="location" type="text" onChange={this.handleInputChange} className="location-field-ly location-field-md"/>
               </label>
-              <input type="button" value="submit" />
+              <input type="button" value="submit" onClick={this.handleSubmit}/>
             </form>
           </section>
         );

@@ -25,7 +25,7 @@ class App extends React.Component {
 ReactDOM.render((
     <Router history={hashHistory}>
         <Route path="/" component={Ocean}/>
-        <Route path="/about" component={MessageForm}/>
+        <Route path="/message" component={MessageForm}/>
         <Route path="/landing" component={App}/>
 
     </Router>
