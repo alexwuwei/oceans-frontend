@@ -1,4 +1,6 @@
 import React from 'react';
+import {Grid, Col, Row} from 'react-bootstrap';
+
 
 class Header extends React.Component {
   render() {

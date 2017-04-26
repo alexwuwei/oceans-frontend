@@ -1,4 +1,6 @@
 import React from 'react';
+import {Grid, Col, Row} from 'react-bootstrap';
+
 
 class Ocean extends React.Component {
   render() {

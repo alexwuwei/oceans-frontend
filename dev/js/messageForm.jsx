@@ -1,4 +1,6 @@
 import React from 'react';
+import {Grid, Col, Row} from 'react-bootstrap';
+
 
 class MessageForm extends React.Component {
     constructor(props) {
@@ -28,29 +30,33 @@ class MessageForm extends React.Component {
 
     render() {
         return (
-          <section className="form-container-ly form-container-md">
-            <form className="message-form-ly message-form-md message-form-bs">
-              <div className="field-container-md">
-                <label className="message-label-ly message-label-md">
-                  Write your message:
-                  {/*<input name="message" type="textarea" rows="6" onChange={this.handleInputChange} className="message-field-ly message-field-md"/>*/}
-                  <textarea name="message" type="textarea" rows="6" cols="40" onChange={this.handleInputChange} className="message-field-ly message-field-md"></textarea>
-              </label>
-            </div>
-              <br/>
+          // <Grid>
+            <section className="form-container-ly form-container-md">
+              <form className="message-form-ly message-form-md message-form-bs">
+                <Row className="field-container-md">
+                  <Col xs={12}>
+                    <label className="input-label-ly input-label-md">
+                      Write your message:
+                      {/*<input name="message" type="textarea" rows="6" onChange={this.handleInputChange} className="message-field-ly message-field-md"/>*/}
+                      <textarea name="message" type="textarea" rows="6" cols="40" onChange={this.handleInputChange} className="message-field-ly message-field-md field-ly"></textarea>
+                    </label>
+                  </Col>
+                </Row>
+                <br/>
 
 
-              <label className="email-label-ly email-label-md">
-                Email:
-                <input name="email" type="email" value={this.state.numberOfGuests} onChange={this.handleInputChange} className="email-field-ly email-field-md"/>
-              </label>
-              <label className="location-label-ly location-label-md">
-                Location:
-                <input name="location" type="text" onChange={this.handleInputChange} className="location-field-ly location-field-md"/>
-              </label>
-              <input type="button" value="submit" onClick={this.handleSubmit}/>
-            </form>
-          </section>
+                <label className="input-label-ly input-label-md">
+                  Email:
+                  <input name="email" type="email" value={this.state.numberOfGuests} onChange={this.handleInputChange} className="email-field-ly field-ly email-field-md"/>
+                </label>
+                <label className="input-label-ly input-label-md">
+                  Location:
+                  <input name="location" type="text" onChange={this.handleInputChange} className="location-field-ly location-field-md field-ly"/>
+                </label>
+                <input type="button" value="submit" onClick={this.handleSubmit}/>
+              </form>
+            </section>
+          // </Grid>
         );
     }
 }

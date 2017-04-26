@@ -5,6 +5,7 @@ require(__dirname + '/../sass/home/layout-home.scss');
 require(__dirname + '/../sass/home/state-home.scss');
 
 import {Router, Route, hashHistory} from 'react-router';
+import {Row, Col, Grid, Modal} from 'react-bootstrap';
 
 const React = require('react');
 const ReactDOM = require('react-dom');

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Grid, Col, Row} from 'react-bootstrap';
 
 class ReplyForm extends React.Component {
     constructor(props) {
