@@ -1,5 +1,6 @@
 import React from 'react';
 import {Grid, Col, Row} from 'react-bootstrap';
+import axios from 'axios';
 
 
 class MessageForm extends React.Component {
@@ -26,6 +27,7 @@ class MessageForm extends React.Component {
     handleSubmit(event) {
     console.log('An essay was submitted: ');
     event.preventDefault();
+    axios.post('/bottles', this.state).then(res => console.log(res)).catch(err => console.log(err));
   }
 
     render() {

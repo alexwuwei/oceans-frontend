@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alexwuwei/oceans-frontend#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "express": "^4.15.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.8",
