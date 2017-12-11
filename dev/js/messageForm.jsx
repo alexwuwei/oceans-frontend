@@ -30,6 +30,15 @@ class MessageForm extends React.Component {
     axios.post('/bottles', this.state).then(res => console.log(res)).catch(err => console.log(err));
   }
 
+  generateRequest() {
+    const messageRequest = {
+      message: this.state.message
+    }
+
+    return messageRequest;
+
+  }
+
     render() {
         return (
           // <Grid>
