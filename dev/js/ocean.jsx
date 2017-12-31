@@ -9,7 +9,8 @@ class Ocean extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        bottlesArray: [{"message":"hi","createdDate":"jul 20th"}],
+        //TODO: Add true example
+        bottlesArray: [{"message":"hi","createdDate":"jul 20th", "replyActive":"true"}],
         bottlesNeeded: false
       };
 
@@ -44,7 +45,6 @@ class Ocean extends React.Component {
         {this.state.bottlesArray.map((instance, index) => {
           return <Bottle key={index} message={instance.message} createdDate={instance.createdDate} replyActive={instance.replyActive}/>
         })}
-        <img src="/../images/darkorange-bottle.svg" className="floating"/>
       </header>
       // </header>
     );
