@@ -13,7 +13,7 @@ class bottleInstance extends React.Component {
       createdDate: this.props.createdDate,
       message: this.props.message,
       location: '',
-      active: false,
+      bottleActive: false,
       replyActive: this.props.replyActive,
       replyFormActive: false,
       replyLocation: '',
@@ -23,16 +23,12 @@ class bottleInstance extends React.Component {
     // this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleSubmit(event) {
-    console.log('An essay was submitted: ');
-    event.preventDefault();
-    axios.post('/bottles', this.state).then(res => console.log(res)).catch(err => console.log(err));
-  }
 
-  onButtonClick() {
+
+  onBottleClick() {
     this.setState({
-      active: !this.state.active
-    })
+      bottleActive: true
+    });
   }
 
   onReplyButtonClick() {
@@ -51,12 +47,22 @@ class bottleInstance extends React.Component {
 
   }
 
+  handleCloseIcon() {
+    this.setState({
+      bottleActive: false
+    });
+  }
+
   render() {
     return (
       // <Grid>
-      <section className="bottle-container-ly bottle-container-md floating" onClick={() => this.onButtonClick()}>
-        {this.state.active &&
-          <section className={"bottle-message-container-bs bottle-message-container-ly " + this.state.active ? "message-expanded-md" : "message-collapsed-md"}>
+      <section onClick={() => this.onBottleClick()} className={this.state.bottleActive ? "someclass" : "someotherclass" + "bottle-container-ly bottle-container-md floating"}>
+        {this.state.bottleActive &&
+          <section className={"bottle-message-container-bs bottle-message-container-ly " + this.state.bottleActive ? "message-expanded-md" : "message-collapsed-md"}>
+            <Row >
+              <Col xs={2} xsOffset={10} ><button type="button" onClick={() => this.handleCloseIcon()}>&times;</button></Col>
+            </Row>
+
             <Row >
               <Col xs={4}>{this.props.createdDate}</Col>
             </Row>
@@ -77,6 +83,7 @@ class bottleInstance extends React.Component {
             
           </Row>
             }
+            {/* fix show hide for reply form. also fix reply form. */}
             {this.state.replyFormActive &&
               <ReplyForm />
             }
