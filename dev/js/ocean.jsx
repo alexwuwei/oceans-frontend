@@ -48,28 +48,28 @@ class Ocean extends React.Component {
 
   render() {
     return (
-<Grid>
-<Row>
-        <Col xs={12}><h1>Message in a bottle</h1></Col>
-      </Row>
-       <Row>
-       <Col xs={12}> <h4>find something in the waves</h4></Col>
-     </Row>
-     {this.state.bottlesArray.map((instance, index) => {
-      return <Bottle key={index} message={instance.message} createdDate={instance.createdDate} replyActive={instance.replyActive} />
-    })}
-      <Row>
-      <Col xs={12}><button type="button" onClick={() => this.createBottleHandler()}>Make a bottle</button></Col>
-    </Row>
-    {this.state.createBottleActive && 
-    <MessageForm />
-    }
-</Grid>
-      
+      <Grid>
+        <Row>
+          <Col xs={12}><h1>Message in a bottle</h1></Col>
+        </Row>
+        <Row>
+          <Col xs={12}> <h4>find something in the waves</h4></Col>
+        </Row>
+        {this.state.bottlesArray.map((instance, index) => {
+          return <Bottle key={index} message={instance.message} createdDate={instance.createdDate} replyActive={instance.replyActive} />
+        })}
+        <Row>
+          <Col xs={12}><button type="button" onClick={() => this.createBottleHandler()}>Make a bottle</button></Col>
+        </Row>
+        {this.state.createBottleActive &&
+          <MessageForm />
+        }
+      </Grid>
+
       // <header className="primary-header-bs">
-        
-       
-        
+
+
+
       // </header>
 
     );
