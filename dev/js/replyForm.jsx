@@ -1,5 +1,6 @@
 import React from 'react';
-import {Grid, Col, Row} from 'react-bootstrap';
+import {Grid, Col, Row, } from 'react-bootstrap';
+import {FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 
 class ReplyForm extends React.Component {
     constructor(props) {
@@ -9,10 +10,10 @@ class ReplyForm extends React.Component {
             location: 'Tell us where you are'
         };
 
-        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleInputChange(event) {
+    handleChange(event) {
         const target = event.target;
         const value = target.value;
         const name = target.name;
@@ -21,23 +22,49 @@ class ReplyForm extends React.Component {
     }
 
     handleSubmit(event) {
-    console.log('An essay was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
+        console.log('A reply was submitted: ');
+        event.preventDefault();
+        // TODO: Replace with new endpoint
+        axios.post('/bottles', this.state).then(res => console.log(res)).catch(err => console.log(err));
+      }
 
     render() {
         return (
-            <form>
-                <label>
-                    Write a reply:
-                    <input name="reply" type="textarea" onChange={this.handleInputChange}/>
-                </label>
-                <br/>
-                <label>
-                    Location:
-                    <input name="location" type="text" onChange={this.handleInputChange}/>
-                </label>
-            </form>
+<form>
+        <FormGroup
+          controlId="formBasicText"
+        //   validationState={this.getValidationState()}
+        >
+          <ControlLabel>Write a reply: </ControlLabel>
+          <FormControl
+            type="textarea"
+            value={this.state.reply}
+            placeholder="Enter reply here"
+            onChange={this.handleChange}
+          />
+           <ControlLabel>Where are you from? </ControlLabel>
+          <FormControl
+            type="text"
+            value={this.state.location}
+            placeholder="Enter location here"
+            onChange={this.handleChange}
+          />
+          {/* <FormControl.Feedback />
+          <HelpBlock>Validation is based on string length.</HelpBlock> */}
+        </FormGroup>
+      </form>
+
+            // <form>
+            //     <label>
+            //         Write your reply:
+            //         <input name="reply" type="textarea" onChange={this.handleChange}/>
+            //     </label>
+            //     <br/>
+            //     <label>
+            //         Tell us where you are (City or Country only) :
+            //         <input name="location" type="text" onChange={this.handleChange}/>
+            //     </label>
+            // </form>
         );
     }
 }

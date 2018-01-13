@@ -19,7 +19,7 @@ var ReplyForm = require('./replyForm.jsx');
 
 class App extends React.Component {
     render() {
-        return <Header />
+        return (<Header />)
     }
 }
 //

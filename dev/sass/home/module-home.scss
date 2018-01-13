@@ -44,3 +44,20 @@
     display: flex;
     flex-direction: column;
 }
+
+.message-expanded-md {
+animation-name: resize;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+//   animation-iteration-count: infinite;
+border: 3px solid black;
+}
+
+.message-collapsed-md {
+    animation-name: resize;
+      animation-duration: 2s;
+      animation-fill-mode: backwards;
+      animation-direction: reverse;
+    //   animation-iteration-count: infinite;
+    border: 3px solid black;
+    }
